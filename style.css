@@ -1,19 +1,19 @@
 @font-face {
-  font-family: "Inter-Regular";
+  font-family: "Inter";
   src: url(./assets/fonts/static/Inter-Regular.ttf);
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Inter-SemiBold";
+  font-family: "Inter";
   src: url(./assets/fonts/static/Inter-SemiBold.ttf);
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Inter-Bold";
+  font-family: "Inter";
   src: url(./assets/fonts/static/Inter-Bold.ttf);
   font-weight: 700;
   font-display: swap;
@@ -28,21 +28,18 @@
   --bgc-card: hsl(0, 0%, 12%);
   --bgc-link: hsl(0, 0%, 20%);
 
-  --font-size-base: 14px;
+  --font-size-base: 0.875rem;
   --spacing-sm: 0.75rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.4rem;
 
-
-  --font-family-regular: "Inter-Regular";
-  --font-family-semibold: "Inter-SemiBold";
-  --font-family-bold: "Inter-Bold";
+  --font-family: "Inter", sans-serif;
 }
 
 body {
   background-color: var(--bgc-body);
   color: var(--color-primary);
-  font-family: var(--font-family-regular);
+  font-family: var(--font-family);
   font-size: var(--font-size-base);
   padding: var(--spacing-md);
   min-height: 100vh;
@@ -88,12 +85,12 @@ body {
 }
 
 .name {
-  font-family: var(--font-family-bold);
+  font-weight: 700;
 }
 
 .location {
   color: var(--color-secondary);
-  font-family: var(--font-family-semibold);
+  font-weight: 600;
 }
 
 .about {
@@ -114,9 +111,9 @@ body {
 
   text-decoration: none;
   background-color: var(--bgc-link);
-  font-family: var(--font-family-bold);
+  font-weight: 700;
 
-  transition: all ease 0.3s;
+  transition: transform ease 0.3s;
 }
 
 .link:hover,
@@ -125,6 +122,18 @@ body {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
-.footer__link {
+.f-link {
   color: var(--color-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+
+  .link:hover,
+  .link:focus-visible {
+    transform: none;
+    box-shadow: none;
+  }
 }
